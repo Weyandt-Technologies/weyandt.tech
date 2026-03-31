@@ -8,30 +8,24 @@ header:
   overlay_image: /assets/images/gear_splash.jpg
 ---
 
-Welcome to **Weyandt Technologies LLC**, where innovation meets security, and the cloud becomes your playground. We have a focused expertise in Software Engineering, AWS (Amazon Web Services), and Information Security.
+**Weyandt Technologies LLC** helps schools, law firms, and small businesses solve real technology problems-software that needs to work reliably, aging systems that need to move to the cloud, and security practices that actually hold up under scrutiny.
 
-# Our Services
-## Unlock your Potential with Software Engineering
+We're not a big agency. You'll work directly with an experienced engineer who has built and secured software at scale. That means straight answers, practical solutions, and no upselling you on things you don't need.
 
-At **Weyandt Technologies LLC**, we understand that software is at the core of modern business operations. Our team of software engineers are ready to tackle any development challenge. Whether you need a small feature or a complete software overhaul, we've got you covered. We build software that doesn't just meet your needs today but also scales for your future.
+## Software Development
 
-## Harnessing the Power of AWS
-AWS is the backbone of the digital age, and our team at **Weyandt Technologies LLC** is here to help you harness its full potential. Our experts will guide you through the cloud maze, optimizing your infrastructure, improving your scalability, and reducing costs. From migration to automation, we'll help you leverage AWS services to stay ahead of the competition.
+Good software is secure by design, not patched up after the fact. Whether you need something built from scratch, an existing system cleaned up, or a plan for where your technology should go next, we write code that's reliable, maintainable, and built to handle growth. Security isn't a feature we add at the end-it's part of how we write every line.
 
-## Securing Your Digital Fortress
-In a world where data is gold, security is paramount. Our team is dedicated to safeguarding your organization against threats. We offer comprehensive security assessments, penetration testing, and cybersecurity training to ensure your data is protected. Don't let vulnerabilities hold you back; fortify your defenses with **Weyandt Technologies LLC**.
+## Cloud Migration and AWS
 
-## Why Choose Us
+Moving to the cloud is one of the best investments a small organization can make, but it's easy to get it wrong. We help you migrate existing systems to AWS or rebuild them properly for the cloud-so you get the cost savings and reliability you were promised, not a confusing bill and a system that's harder to manage than what you had before.
 
-**Tailored Solutions:** We understand that no two businesses are alike. That's why we don't offer one-size-fits-all solutions. Every service we provide is tailored to meet your unique needs and goals.
+## Information Security
 
-**Cutting-Edge Technology:** We stay at the forefront of industry trends and emerging technologies. You can trust us to implement the latest tools and best practices in your projects.
+Most small organizations don't know where their biggest security risks are until something goes wrong. We do security assessments to find those gaps before someone exploits them, help you put clear policies in place so your staff knows what to do, and build incident response plans so you're not starting from zero when a problem hits.
 
-**Security First:** Security isn't an afterthought; it's at the core of everything we do. Your data's safety is our top priority.
+---
 
-**Client-Centric Approach:** We're not just consultants; we're partners in your success. Your goals are our goals, and we work tirelessly to help you achieve them.
+**Working with organizations that don't have a full IT department** is something we do intentionally. You shouldn't need an in-house security team to understand your risk posture, and you shouldn't need a team of engineers to move to the cloud safely. We'll meet you where you are.
 
-## Get Started Today
-Ready to take your business to the next level? Whether you need software that transforms your operations, cloud solutions that drive efficiency, or ironclad security for your digital assets, **Weyandt Technologies LLC** is your go-to consulting partner.
-
-[Contact us](https://weyandt.tech/contact) today to schedule a consultation and discover how we can help you achieve your goals. Your success is our business.
+[Get in touch](https://weyandt.tech/contact) to talk through what you're dealing with. No commitment required.

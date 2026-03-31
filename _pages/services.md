@@ -30,6 +30,6 @@ feature_row:
 
 {% include feature_row %}
 
-## Not finding the service you're looking for? 
+## Not sure if we cover what you need?
 
-[Contact us](https://weyandt.tech/contact) anyway! We are always interested in expanding our knowledge to better serve our customers and if we can't help you we'll connect you with someone who can!
+[Reach out anyway.](https://weyandt.tech/contact) If it's something we can help with, we will. If not, we'll point you in the right direction.

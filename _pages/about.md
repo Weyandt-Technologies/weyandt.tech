@@ -44,7 +44,10 @@ header:
 <br/>
 <h1 class="center">Mike Weyandt</h1>
 <p class="left" style="color: grey;">
-  Most recently Mike has been busy developing and maintaining the technology supporting the Internet Gateway (IGW) within AWS EC2. He has GIAC Certifications in Incident Handling (GCIH) and Exploit Researching + Advanced Penetration Testing (GXPN). He has over 6 years of industry experience ranging from maintaining the virtual infrastructure within a higher education environment to helping build and operate one of the largest computer networks and software systems in the world. He earned his Bachelor of Science degree in Computer Science from The University of Akron.
+  Mike started his career in higher education IT and has spent the last several years at Amazon, where he developed and maintained the software behind EC2's Internet Gateway-one of the most traffic-heavy pieces of infrastructure on the internet. He holds GIAC certifications in Incident Handling (GCIH) and Advanced Penetration Testing (GXPN), and has a BS in Computer Science from The University of Akron.
+</p>
+<p class="left" style="color: grey;">
+  He started Weyandt Technologies to bring that same level of engineering and security experience to organizations that usually can't access it-schools, small businesses, law firms, and others who need solid technical help but don't need (or want) a large consulting firm.
 </p>
 
 <h2 class="center">Testimonials</h2>

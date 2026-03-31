@@ -21,7 +21,7 @@
 title: Weyandt Technologies LLC
 email: contact@weyandt.tech
 description: >- # this means to ignore newlines until "baseurl:"
-  Site Under Construction
+  Software development, AWS cloud migration, and information security consulting for schools, law firms, and small businesses.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://" # the base hostname & protocol for your site, e.g. http://example.com
 
