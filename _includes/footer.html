@@ -1,1 +1,26 @@
-<div class="page__footer-copyright">&copy; 2023 Weyandt Technologies LLC</div>
+{%- comment -%}
+  Replaces the theme footer. The stock version renders social icons and a feed link,
+  both of which need Font Awesome and neither of which applies here.
+{%- endcomment -%}
+<div class="site-footer">
+  <div class="site-footer__contact">
+    <a class="site-footer__email" href="mailto:{{ site.email }}">
+      <svg class="site-footer__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <path d="m2 7 10 6 10-6"></path>
+      </svg>
+      {{ site.email }}
+    </a>
+    <p class="site-footer__area">Serving Northeast Ohio. Remote engagements welcome.</p>
+  </div>
+
+  <nav class="site-footer__nav" aria-label="Footer">
+    <ul>
+      {%- for link in site.data.navigation.main -%}
+        <li><a href="{{ link.url | relative_url }}">{{ link.title }}</a></li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+
+  <p class="site-footer__legal">&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
+</div>

@@ -1,9 +1,68 @@
-<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-<link rel="manifest" href="assets/images/site.webmanifest">
-<link rel="mask-icon" href="assets/images/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="assets/images/favicon.ico">
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="assets/images/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
+{%- comment -%}
+  Additive <head> hook. Every href here previously omitted its leading slash, so the
+  icons and manifest resolved relative to the current document and 404'd on every page
+  below the root (/services/software/assets/images/... etc). relative_url fixes that.
+{%- endcomment -%}
+<link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/apple-touch-icon.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon-32x32.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon-16x16.png' | relative_url }}">
+<link rel="manifest" href="{{ '/assets/images/site.webmanifest' | relative_url }}">
+<link rel="mask-icon" href="{{ '/assets/images/safari-pinned-tab.svg' | relative_url }}" color="#0f4c5c">
+<link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+<meta name="msapplication-TileColor" content="#0f4c5c">
+<meta name="msapplication-config" content="{{ '/assets/images/browserconfig.xml' | relative_url }}">
+<meta name="theme-color" content="#0f4c5c">
+
+{% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital@1&display=swap">
+
+{%- comment -%}
+  The theme's seo.html emits a minimal Organization node with no name. This adds the
+  substantive entity: what the business is, who runs it, where it works.
+{%- endcomment -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{ '/#organization' | absolute_url }}",
+      "name": {{ site.title | jsonify }},
+      "url": {{ '/' | absolute_url | jsonify }},
+      "logo": {{ '/assets/images/android-chrome-512x512.png' | absolute_url | jsonify }},
+      "image": {{ '/assets/images/gear_splash.jpg' | absolute_url | jsonify }},
+      "email": {{ site.email | jsonify }},
+      "description": {{ site.description | strip_newlines | strip | jsonify }},
+      "founder": {
+        "@type": "Person",
+        "name": "Mike Weyandt",
+        "jobTitle": "Principal Consultant",
+        "hasCredential": ["GIAC Certified Incident Handler (GCIH)", "GIAC Exploit Researcher and Advanced Penetration Tester (GXPN)"]
+      },
+      "areaServed": [
+        { "@type": "AdministrativeArea", "name": "Northeast Ohio" },
+        { "@type": "State", "name": "Ohio" }
+      ],
+      "knowsAbout": [
+        "Fractional CISO",
+        "Information security program management",
+        "Security assessment",
+        "Penetration testing",
+        "Incident response planning",
+        "AWS cloud migration",
+        "Software engineering"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ '/#website' | absolute_url }}",
+      "url": {{ '/' | absolute_url | jsonify }},
+      "name": {{ site.title | jsonify }},
+      "publisher": { "@id": "{{ '/#organization' | absolute_url }}" }
+    }
+  ]
+}
+</script>

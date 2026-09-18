@@ -1,0 +1,34 @@
+{%- comment -%}
+  Local fork of minimal-mistakes 4.24.0 _includes/head.html.
+
+  Only change: the Font Awesome 5 stylesheet (preload + noscript fallback) is removed.
+  The site uses zero icon-font glyphs (the footer's one icon is inline SVG), so the
+  theme default was costing a render-blocking third-party request on every page for
+  ~70 KB of unused CSS.
+
+  `remote_theme` is pinned to an exact tag, so this fork will not silently drift.
+  If that pin is ever bumped, re-diff this file against the new tag.
+{%- endcomment -%}
+<meta charset="utf-8">
+
+{% include seo.html %}
+
+{% unless site.atom_feed.hide %}
+  <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
+{% endunless %}
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+{% if site.head_scripts %}
+  {% for script in site.head_scripts %}
+    <script src="{{ script | relative_url }}"></script>
+  {% endfor %}
+{% endif %}

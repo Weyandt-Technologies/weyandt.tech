@@ -1,9 +1,11 @@
 main:
   - title: "Home"
     url: /
+  - title: "Fractional CISO"
+    url: /fractional-ciso/
   - title: "Services"
-    url: /services
+    url: /services/
   - title: "About"
-    url: /about
+    url: /about/
   - title: "Contact"
-    url: /contact
+    url: /contact/

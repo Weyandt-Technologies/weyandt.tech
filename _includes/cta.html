@@ -1,0 +1,9 @@
+{%- comment -%}
+  Shared closing call to action. Previously copy-pasted verbatim into four pages.
+  Override the heading per page with: {% include cta.html heading="..." %}
+{%- endcomment -%}
+<div class="cta">
+  <h2 class="cta__heading">{{ include.heading | default: "Not finding what you're looking for?" | smartify }}</h2>
+  <p class="cta__body">{{ include.body | default: "Get in touch anyway. If it's something I do, I'll tell you. If not, I'll try to point you to someone who does." | smartify }}</p>
+  <p class="cta__actions"><a class="btn btn--primary" href="{{ '/contact/' | relative_url }}">{{ include.label | default: "Get in touch" }}</a></p>
+</div>

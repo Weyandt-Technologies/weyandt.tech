@@ -1,0 +1,534 @@
+// ===========================================================================
+// Brand layer for weyandt.tech
+//
+// Imported after minimal-mistakes, so equal-specificity rules here win on
+// source order. Where the theme uses susy spans or floats inside a media
+// query, selectors below are deliberately one level more specific rather
+// than reaching for !important.
+//
+// Tokens live in assets/css/main.scss.
+// ===========================================================================
+
+// --- Base -----------------------------------------------------------------
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+// The theme ships a 1280px content column. Long-form prose needs a measure.
+.page__content {
+  > p,
+  > ul,
+  > ol,
+  > blockquote,
+  > h2,
+  > h3,
+  > h4,
+  > hr {
+    max-width: 38rem;
+  }
+
+  > p,
+  > ul,
+  > ol {
+    line-height: 1.65;
+  }
+
+  > h2 {
+    margin-top: 2.5em;
+    font-size: 1.6rem;
+  }
+
+  > h3 {
+    margin-top: 2em;
+    font-size: 1.25rem;
+  }
+
+  > hr {
+    height: 0;
+    border: 0;
+    border-top: 1px solid $rule;
+    margin: 3rem 0;
+  }
+}
+
+// --- Masthead -------------------------------------------------------------
+
+.masthead {
+  border-bottom: 1px solid $rule;
+  background-color: #fff;
+}
+
+.greedy-nav {
+  background-color: transparent;
+
+  .site-title {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: $brand-deep;
+  }
+
+  a {
+    font-size: 0.95rem;
+  }
+
+  // The stock masthead gives no sense of place. Mark the current section.
+  .visible-links a {
+    &::before {
+      background-color: $brand-deep;
+      height: 2px;
+    }
+
+    &.is-current,
+    &.is-ancestor {
+      color: $brand-deep;
+      font-weight: 600;
+    }
+
+    &.is-current::before {
+      width: 100%;
+    }
+
+    &.is-ancestor::before {
+      width: 100%;
+      background-color: $rule;
+    }
+  }
+}
+
+// --- Hero -----------------------------------------------------------------
+
+.page__hero--overlay {
+  padding: 5em 1em 4.5em;
+  background-position: center;
+  background-size: cover;
+
+  // Progressive enhancement: WebP is ~55% the weight of the JPEG the theme
+  // writes inline on the element. The inline style wins on specificity, so
+  // the swap has to be !important, the one place it is unavoidable.
+  @supports (background-image: image-set(url("/assets/images/gear_splash.webp") type("image/webp"))) {
+    background-image:
+      linear-gradient(to right, rgba(11, 45, 54, 0.95), rgba(11, 45, 54, 0.74) 55%, rgba(11, 45, 54, 0.48)),
+      url("/assets/images/gear_splash.webp") !important;
+  }
+
+  // Match the content column's gutter exactly, so the hero headline shares a
+  // left edge with the body copy below it instead of sitting on its own axis.
+  .wrapper {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 1em;
+  }
+
+  .page__title {
+    max-width: 22ch;
+    font-size: 2.1rem;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+    margin-bottom: 0.5em;
+    text-shadow: none;
+
+    @media (min-width: 48em) {
+      font-size: 3rem;
+    }
+  }
+
+  .page__lead {
+    font-family: $sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.55;
+    max-width: 34rem;
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: none;
+
+    @media (min-width: 48em) {
+      font-size: 1.25rem;
+    }
+  }
+
+  // The theme renders every header action with an identical class, so the
+  // primary/secondary distinction has to be positional.
+  .btn--light-outline {
+    margin: 0.35rem 0.5rem 0.35rem 0;
+    font-size: 0.95rem;
+    letter-spacing: 0.005em;
+    border-width: 1px;
+
+    &:first-of-type {
+      background-color: $accent;
+      border-color: $accent;
+      color: $accent-ink;
+
+      &:hover,
+      &:focus-visible {
+        background-color: darken($accent, 7%);
+        border-color: darken($accent, 7%);
+        color: $accent-ink;
+      }
+    }
+  }
+}
+
+// --- Buttons --------------------------------------------------------------
+
+.btn {
+  border-radius: 2px;
+  font-weight: 600;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+
+.btn--primary {
+  background-color: $brand-deep;
+  border: 1px solid $brand-deep;
+  color: #fff;
+
+  &:hover,
+  &:focus-visible {
+    background-color: darken($brand-deep, 6%);
+    color: #fff;
+  }
+}
+
+// --- Capability blocks ----------------------------------------------------
+//
+// Reuses the theme's feature_row so pages stay editable as plain YAML, but
+// strips the card chrome. A short rule above each block marks them as
+// parallel capabilities without implying a sequence.
+
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.75rem;
+  margin: 2.5rem 0 0;
+  border-bottom: 0;
+
+  @media (min-width: 48em) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  .feature__item {
+    float: none;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .archive__item {
+    padding-top: 1.1rem;
+    border-top: 3px solid $brand-deep;
+  }
+
+  .archive__item-body {
+    padding: 0;
+  }
+
+  .archive__item-title {
+    margin: 0 0 0.6rem;
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  .archive__item-excerpt {
+    margin: 0;
+    font-size: 0.975rem;
+    line-height: 1.6;
+    color: $text-color;
+
+    p {
+      margin: 0 0 0.8em;
+      font-size: inherit;
+    }
+  }
+
+  .btn {
+    margin-top: 0.4rem;
+    font-size: 0.9rem;
+  }
+}
+
+// --- Credentials ----------------------------------------------------------
+//
+// Applied with a kramdown IAL on a plain markdown list: {: .credentials}
+
+.page__content > .credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  max-width: 46rem;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid $rule;
+    border-left: 3px solid $accent;
+    background-color: $surface;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: $text-color;
+  }
+}
+
+// --- Testimonials ---------------------------------------------------------
+
+.page__content > .testimonial {
+  max-width: 40rem;
+  margin: 2rem 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 3px solid $brand-deep;
+
+  p {
+    max-width: none;
+    font-family: $serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: $text-color;
+  }
+
+  cite,
+  p > strong:last-child {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: $sans-serif;
+    font-style: normal;
+    font-size: 0.9rem;
+    color: $muted-text-color;
+  }
+}
+
+// --- Closing call to action ----------------------------------------------
+
+.cta {
+  max-width: 38rem;
+  margin: 3.5rem 0 1rem;
+  padding: 1.75rem;
+  background-color: $surface;
+  border-top: 3px solid $brand-deep;
+}
+
+.cta__heading {
+  margin: 0 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.cta__body {
+  margin: 0 0 1.25rem;
+  line-height: 1.6;
+}
+
+.cta__actions {
+  margin: 0;
+}
+
+// --- About page portrait --------------------------------------------------
+//
+// text-align cannot centre a replaced element via a rule on the element
+// itself, which is why the previous markup rendered flush left.
+
+.portrait {
+  display: block;
+  width: 220px;
+  max-width: 60%;
+  height: auto;
+  margin: 0 0 1.75rem;
+  border-radius: 3px;
+}
+
+// --- Contact form ---------------------------------------------------------
+
+#fs-frm {
+  max-width: 34rem;
+
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  label {
+    display: block;
+    margin-top: 1.1rem;
+    margin-bottom: 0.35rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: $text-color;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid #b9c4c8;
+    border-radius: 2px;
+    background-color: #fff;
+    font-family: $sans-serif;
+    font-size: 1rem;
+    color: $text-color;
+
+    &:focus {
+      border-color: $brand-deep;
+      outline: 2px solid $brand-deep;
+      outline-offset: 1px;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  input[type="submit"] {
+    margin-top: 1.5rem;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid $brand-deep;
+    border-radius: 2px;
+    background-color: $brand-deep;
+    color: #fff;
+    font-family: $sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 120ms ease;
+
+    &:hover {
+      background-color: darken($brand-deep, 6%);
+    }
+  }
+}
+
+.form-hint {
+  margin-top: 0.3rem;
+  font-size: 0.85rem;
+  color: $muted-text-color;
+}
+
+// Honeypot: off-screen rather than display:none so bots that check
+// computed style still fill it in.
+.form-gotcha {
+  position: absolute !important;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// --- Footer ---------------------------------------------------------------
+
+.page__footer {
+  margin-top: 4rem;
+  border-top: 1px solid $rule;
+  background-color: $surface;
+  color: $text-color;
+}
+
+.site-footer {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2.25rem 0 1.5rem;
+  text-align: left;
+
+  @media (min-width: 48em) {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
+
+.site-footer__email {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $brand-deep;
+
+  &:hover {
+    color: $link-color-hover;
+    text-decoration: underline;
+  }
+}
+
+.site-footer__icon {
+  flex: none;
+}
+
+.site-footer__area {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: $muted-text-color;
+}
+
+.site-footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+
+  a {
+    font-size: 0.9rem;
+    color: $text-color;
+
+    &:hover {
+      color: $brand-deep;
+      text-decoration: underline;
+    }
+  }
+}
+
+.site-footer__legal {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid $rule;
+  font-size: 0.85rem;
+  color: $muted-text-color;
+}
+
+// --- Focus and motion -----------------------------------------------------
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid $brand-deep;
+  outline-offset: 2px;
+  border-radius: 1px;
+}
+
+.page__hero--overlay a:focus-visible,
+.page__footer a:focus-visible {
+  outline-color: $accent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

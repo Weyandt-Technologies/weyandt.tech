@@ -1,58 +1,61 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you: 
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+# Site settings for weyandt.tech
+# Jekyll on GitHub Pages, using the Minimal Mistakes remote theme.
+# Note: this file is NOT reloaded automatically by `jekyll serve`; restart after editing.
 
 title: Weyandt Technologies LLC
+masthead_title: Weyandt Technologies
 email: contact@weyandt.tech
-description: >- # this means to ignore newlines until "baseurl:"
-  Software development, AWS cloud migration, and information security consulting for schools, law firms, and small businesses.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://" # the base hostname & protocol for your site, e.g. http://example.com
+description: >-
+  Fractional CISO services, independent security assessments, and senior software and
+  AWS engineering for healthcare, legal, and education organizations in Northeast Ohio.
+locale: en-US
+
+# The base hostname and protocol. Must be a real origin. An incomplete value here
+# silently breaks every canonical tag, og:url, and og:image across the site.
+url: "https://weyandt.tech"
+baseurl: ""
+
+# Default social sharing image (absolute URL is built by the theme from `url`).
+og_image: /assets/images/gear_splash.jpg
+
+# Drives the JSON-LD block emitted by the theme's seo.html. Without this it
+# publishes `{"@type": "Person", "name": null}`.
+social:
+  type: Organization
+  name: Weyandt Technologies LLC
 
 # Build settings
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+# Needed by the github-pages gem when building outside of GitHub Actions
+# (it resolves the origin remote otherwise).
+repository: "Weyandt-Technologies/weyandt.tech"
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 
 include: ["_pages"]
 
-# Disable Feed in footer
+exclude:
+  - assets/images/src   # full-resolution originals; the optimized derivatives ship instead
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Disable the atom feed link in the footer
 atom_feed:
   hide: true
 
 plugins:
   - jekyll-include-cache
+  - jekyll-sitemap
+
+# Every page shares the same hero treatment, so set it once here instead of
+# repeating a five-line `header:` block in each file's front matter.
+defaults:
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: splash
+      header:
+        overlay_color: "#0f4c5c"
+        overlay_filter: "linear-gradient(to right, rgba(11, 45, 54, 0.94), rgba(11, 45, 54, 0.72) 60%, rgba(11, 45, 54, 0.45))"
+        overlay_image: /assets/images/gear_splash.jpg

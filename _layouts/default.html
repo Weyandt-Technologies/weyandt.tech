@@ -1,0 +1,54 @@
+---
+---
+
+{%- comment -%}
+  Local fork of minimal-mistakes 4.24.0 _layouts/default.html.
+
+  Only change: masthead.html is included normally instead of via include_cached.
+  jekyll-include-cache keys on the include name and its parameters, not on the
+  page, so a cached masthead renders once and the same HTML is reused site-wide.
+  That makes a per-page active nav state (aria-current) impossible. On a ten-page
+  site the caching saves nothing worth having.
+
+  `remote_theme` is pinned to an exact tag, so this fork will not silently drift.
+  If that pin is ever bumped, re-diff this file against the new tag.
+{%- endcomment -%}
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="{{ site.locale | slice: 0,2 | default: "en" }}" class="no-js">
+  <head>
+    {% include head.html %}
+    {% include head/custom.html %}
+  </head>
+
+  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
+    {% include_cached skip-links.html %}
+    {% include_cached browser-upgrade.html %}
+    {% include masthead.html %}
+
+    <div class="initial-content">
+      {{ content }}
+    </div>
+
+    {% if site.search == true %}
+      <div class="search-content">
+        {% include_cached search/search_form.html %}
+      </div>
+    {% endif %}
+
+    <div id="footer" class="page__footer">
+      <footer>
+        {% include footer/custom.html %}
+        {% include_cached footer.html %}
+      </footer>
+    </div>
+
+    {% include scripts.html %}
+
+  </body>
+</html>

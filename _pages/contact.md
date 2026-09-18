@@ -1,26 +1,44 @@
 ---
-permalink: /contact
-layout: single
-title: Contact Us
-header:
-  overlay_color: "#000"
-  overlay_filter: "linear-gradient(to right, rgba(0, 0, 0, 0.95), 75%, rgba(255, 255, 255, 0.0))"
-  overlay_image: /assets/images/gear_splash.jpg
+permalink: /contact/
+title: "Contact"
+description: "Get in touch about fractional CISO work, a security assessment, or an engineering project. Northeast Ohio and remote."
+tagline: "Tell me what's going on and I'll tell you whether I can help."
 ---
 
-Please reach out using the form below and we will get back to you as soon as possible!
+Email me at [contact@weyandt.tech](mailto:contact@weyandt.tech) or use the form. It comes to me either way.
+
+If what you need is outside what I do, I'll say so and try to point you to someone who does it.
 
 <form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xqkvlaqr" method="post">
   <fieldset id="fs-frm-inputs">
-    <label for="full-name">Full Name</label>
-    <input type="text" name="name" id="full-name" required="">
-    <label for="email-address">Email Address</label>
-    <input type="email" name="_replyto" id="email-address" required="">
-    <label for="tel">Phone Number (optional)</label>
-    <input type="tel" name="tel" id="tel" >
-    <label for="message">Message</label>
-    <textarea rows="5" name="message" id="message" required=""></textarea>
-    <input type="hidden" name="_subject" id="email-subject" value="Contact Form Submission">
-  <div data-lastpass-icon-root="true" style="position: relative !important; height: 0px !important; width: 0px !important; float: left !important;"></div></fieldset>
-  <input type="submit" value="Submit">
+    <label for="full-name">Your name</label>
+    <input type="text" name="name" id="full-name" autocomplete="name" required>
+
+    <label for="email-address">Email address</label>
+    <input type="email" name="_replyto" id="email-address" autocomplete="email" required>
+
+    <label for="tel">Phone number (optional)</label>
+    <input type="tel" name="tel" id="tel" autocomplete="tel">
+
+    <label for="org-type">What kind of organization?</label>
+    <select name="organization_type" id="org-type">
+      <option value="">Prefer not to say</option>
+      <option>Medical practice or vendor</option>
+      <option>Law, accounting, or insurance firm</option>
+      <option>School or district</option>
+      <option>Other small business</option>
+    </select>
+
+    <label for="message">What’s going on?</label>
+    <textarea rows="6" name="message" id="message" required></textarea>
+    <p class="form-hint">A sentence or two is plenty. Please don’t put passwords, patient or client data, or details of an active security incident in this form.</p>
+
+    <input type="hidden" name="_subject" value="Contact form submission">
+    <input type="hidden" name="_next" value="https://weyandt.tech/thanks/">
+    <p class="form-gotcha" aria-hidden="true">
+      <label for="company-website">Leave this field empty</label>
+      <input type="text" name="_gotcha" id="company-website" tabindex="-1" autocomplete="off">
+    </p>
+  </fieldset>
+  <input type="submit" value="Send message">
 </form>

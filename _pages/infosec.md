@@ -1,22 +1,33 @@
 ---
-permalink: /services/infosec
-layout: splash
-title: Information Security Services
+permalink: /services/infosec/
+title: "Security assessment and testing"
+description: "Independent vulnerability assessment, penetration testing, security policy work, and incident response planning. GCIH and GXPN certified, Northeast Ohio and remote."
+tagline: "An outside look at where you stand."
 header:
-  overlay_color: "#000"
-  overlay_filter: "linear-gradient(to right, rgba(0, 0, 0, 0.95), 75%, rgba(255, 255, 255, 0.0))"
-  overlay_image: assets/images/information_security.png
+  actions:
+    - label: "Get in touch"
+      url: /contact/
+    - label: "About fractional CISO work"
+      url: /fractional-ciso/
 feature_row:
-  - title: "Security Assessments"
-    excerpt: "Most organizations have security gaps they don't know about. We assess your systems, network, and applications to find them-before someone else does. This includes vulnerability scanning, penetration testing, and a review of how your environment is configured. You'll get a clear report of what we found and, more importantly, what to do about it. We work with organizations of all sizes, including schools and small businesses that have never had a formal assessment done."
-  - title: "Security Policy and Compliance"
-    excerpt: "Having the right policies in place matters-for protecting your organization, meeting regulatory requirements, and knowing what to do when something goes wrong. We help you build or improve your information security policies and procedures so they actually reflect how your organization works, not just what a compliance checklist requires. Whether you're dealing with FERPA, state privacy laws, or just need a solid acceptable use policy, we can help."
-  - title: "Incident Response Planning"
-    excerpt: "When a security incident happens, the worst time to figure out your response is while it's happening. We work with you to build an incident response plan that fits your organization-who does what, how you communicate, when to bring in outside help, and how to recover. A good plan doesn't have to be complicated, but it does have to exist before you need it."
+  - title: "Assessment and penetration testing"
+    excerpt: "I look at your network, systems, and applications to find the gaps, using scanning tools and by hand. You get a written report of what I found, how bad each item is, and what to fix first. If you've never had one done, that's fine. Most of my clients hadn't."
+  - title: "Policies people will read"
+    excerpt: "Policies only help if people read them. I write or rework yours so they match how your organization works, and so the people bound by them could explain them if asked."
+  - title: "Incident response planning"
+    excerpt: "We write down who decides, who makes the calls, and when to bring in outside help. Then we walk through it once. It doesn't need to be long. It needs to exist and have names in it."
 ---
+
+Whoever runs your IT shouldn't be the one grading it. That's not a knock on them. Grading your own work is just not something anyone can do well.
+
+I hold GIAC certifications in incident handling (GCIH) and advanced penetration testing (GXPN). I don't sell managed IT, hardware, or software, so there's nothing in the report I'm trying to steer you toward.
 
 {% include feature_row %}
 
-## Not finding what you're looking for?
+## What you get
 
-[Reach out anyway.](https://weyandt.tech/contact) If it's something we can help with, we will. If not, we'll point you in the right direction.
+A written report you can hand to your leadership, your insurer, or the client who asked. What I tested, what I found, what it would take to exploit, and what to do about it in order. Then a call to go through it together.
+
+If you'd rather have someone own the fixes than manage them yourself, that's the [fractional CISO](/fractional-ciso/) side of the work.
+
+{% include cta.html %}
