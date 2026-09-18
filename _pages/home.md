@@ -30,17 +30,13 @@ I start by finding out what you have. Which systems, who can log in, where the p
 
 After that it's policies people will read, a plan for what to do when something happens, and a report each quarter that your board or partners can follow. When a questionnaire or an insurance form shows up, I fill it out.
 
-[How an engagement works](/fractional-ciso/){: .btn .btn--primary}
+Along the way I set up monitoring, so you find out about an outage from an alarm instead of from a user. The logging that helps with an outage is the same logging you need after a security incident, so it does double duty.
+
+The [fractional CISO page](/fractional-ciso/) goes through all of this in more detail.
 
 ## Who I work with
 
-{% include feature_row id="verticals" %}
-
-## Seeing what your systems are doing
-
-Most outages get reported by a user. Someone can't log in, email is down, the website is slow, and that is how you find out.
-
-I set up monitoring so you find out first. A few alarms tied to things that matter, and one page that says whether everything is up. The logging that helps with an outage is the same logging you need after a security incident, so it does double duty.
+{% include feature_row id="verticals" title_tag="h3" %}
 
 ## Background
 

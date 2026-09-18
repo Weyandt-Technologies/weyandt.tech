@@ -47,6 +47,10 @@ h1, h2, h3, h4 {
     font-size: 1.6rem;
   }
 
+  > h2:first-child {
+    margin-top: 0.5em;
+  }
+
   > h3 {
     margin-top: 2em;
     font-size: 1.25rem;
@@ -102,9 +106,21 @@ h1, h2, h3, h4 {
       background-color: $rule;
     }
   }
+
+  // Below 48em site.js moves every link into this list, so the current page
+  // needs marking here as well.
+  .hidden-links a {
+    &.is-current,
+    &.is-ancestor {
+      color: $brand-deep;
+      font-weight: 600;
+    }
+  }
 }
 
 // --- Hero -----------------------------------------------------------------
+
+$hero-overlay: linear-gradient(to right, rgba(11, 45, 54, 0.95), rgba(11, 45, 54, 0.74) 55%, rgba(11, 45, 54, 0.48));
 
 .page__hero--overlay {
   padding: 5em 1em 4.5em;
@@ -114,10 +130,10 @@ h1, h2, h3, h4 {
   // Progressive enhancement: WebP is ~55% the weight of the JPEG the theme
   // writes inline on the element. The inline style wins on specificity, so
   // the swap has to be !important, the one place it is unavoidable.
+  // $hero-overlay must stay identical to header.overlay_filter in _config.yml,
+  // which is the JPEG fallback for browsers that fail this @supports test.
   @supports (background-image: image-set(url("/assets/images/gear_splash.webp") type("image/webp"))) {
-    background-image:
-      linear-gradient(to right, rgba(11, 45, 54, 0.95), rgba(11, 45, 54, 0.74) 55%, rgba(11, 45, 54, 0.48)),
-      url("/assets/images/gear_splash.webp") !important;
+    background-image: $hero-overlay, url("/assets/images/gear_splash.webp") !important;
   }
 
   // Match the content column's gutter exactly, so the hero headline shares a
@@ -333,17 +349,58 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
-// --- About page portrait --------------------------------------------------
+// --- About page intro -----------------------------------------------------
 //
-// text-align cannot centre a replaced element via a rule on the element
-// itself, which is why the previous markup rendered flush left.
+// The portrait sits beside the opening paragraphs instead of floating alone
+// above the heading. The text column keeps the page's 38rem measure and left
+// edge; the photo hangs to its right on wide screens and stacks above it on
+// phones. The markup is a raw HTML block in about.md so kramdown leaves the
+// wrapper structure alone.
+
+.about-intro {
+  display: grid;
+  gap: 1.25rem;
+  margin: 0 0 1.75rem;
+
+  @media (min-width: 48em) {
+    grid-template-columns: minmax(0, 38rem) 11rem;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+
+.about-intro__text {
+  p {
+    max-width: 38rem;
+    line-height: 1.65;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 48em) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.about-intro__photo {
+  display: block;
+  order: -1;
+
+  @media (min-width: 48em) {
+    grid-column: 2;
+    grid-row: 1;
+    order: 0;
+  }
+}
 
 .portrait {
   display: block;
-  width: 220px;
-  max-width: 60%;
+  width: 11rem;
+  max-width: 100%;
   height: auto;
-  margin: 0 0 1.75rem;
   border-radius: 3px;
 }
 

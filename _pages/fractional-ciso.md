@@ -24,7 +24,7 @@ Most organizations under a few hundred people can't justify the salary. Fraction
 
 ## What the role covers
 
-{% include feature_row id="covers" %}
+{% include feature_row id="covers" title_tag="h3" %}
 
 ## How this works
 

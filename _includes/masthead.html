@@ -9,6 +9,8 @@
        claiming aria-current.
     3. Drops the `site.search` toggle. Search is off, and the button's only content was
        a Font Awesome glyph. See the note in head.html about removing that dependency.
+    4. The toggle carries aria-controls/aria-expanded and the menu list has an id.
+       Menu behaviour is in assets/js/site.js, which replaces the theme's greedy nav.
 {%- endcomment -%}
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
 
@@ -37,11 +39,11 @@
             </li>
           {%- endfor -%}
         </ul>
-        <button class="greedy-nav__toggle hidden" type="button">
+        <button class="greedy-nav__toggle hidden" type="button" aria-controls="site-nav-menu" aria-expanded="false">
           <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>
           <div class="navicon"></div>
         </button>
-        <ul class="hidden-links hidden"></ul>
+        <ul id="site-nav-menu" class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>

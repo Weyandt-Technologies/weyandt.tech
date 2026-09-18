@@ -12,7 +12,7 @@ search: false
 // here wins, but only if it is assigned BEFORE the theme import below.
 // ---------------------------------------------------------------------------
 
-// Typography: IBM Plex, loaded in _includes/head/custom.html.
+// Typography: IBM Plex, self-hosted (see _sass/_fonts.scss).
 // Sans carries all structure; the serif appears only in testimonials.
 $doc-font-size: 17;
 $sans-serif: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -49,6 +49,7 @@ $focus-color: $brand-deep;
 $intro-transition: none;
 $global-transition: none;
 
+@import "fonts"; // @font-face for the self-hosted Plex files
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 @import "custom"; // brand layer, must come last

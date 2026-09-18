@@ -9,18 +9,18 @@ header:
       url: /contact/
 ---
 
-<picture>
-  <source srcset="/assets/images/mike.webp" type="image/webp">
-  <img class="portrait" src="/assets/images/mike.jpg" width="800" height="838" decoding="async" alt="Mike Weyandt, founder of Weyandt Technologies">
-</picture>
-
 ## Mike Weyandt
 
-I started in IT at a university, doing security with a small budget and a smaller staff. After that I spent several years at Amazon on the software behind EC2's Internet Gateway, a system that carries a large share of the traffic in and out of AWS. A design mistake there shows up as customer impact, not a code review comment. Most of what I know about running things safely I learned there.
-
-I hold GIAC certifications in incident handling (GCIH) and advanced penetration testing (GXPN), and a BS in computer science from The University of Akron.
-
-I started Weyandt Technologies because that kind of help is hard to get at a smaller scale. Medical practices, law and accounting firms, school districts, and small businesses need engineering judgment too, and usually can't get it without hiring a consulting firm.
+<div class="about-intro">
+  <div class="about-intro__text">
+    <p>I started in IT at a university, doing security with a small budget and a smaller staff. After that I spent several years at Amazon on the software behind EC2’s Internet Gateway, a system that carries a large share of the traffic in and out of AWS. A design mistake there shows up as customer impact, not a code review comment. Most of what I know about running things safely I learned there.</p>
+    <p>I started Weyandt Technologies because that kind of help is hard to get at a smaller scale. Medical practices, law and accounting firms, school districts, and small businesses need engineering judgment too, and usually can’t get it without hiring a consulting firm.</p>
+  </div>
+  <picture class="about-intro__photo">
+    <source srcset="/assets/images/mike.webp" type="image/webp">
+    <img class="portrait" src="/assets/images/mike.jpg" width="400" height="419" decoding="async" alt="Mike Weyandt, founder of Weyandt Technologies">
+  </picture>
+</div>
 
 - GIAC Certified Incident Handler (GCIH)
 - GIAC Exploit Researcher and Advanced Penetration Tester (GXPN)

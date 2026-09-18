@@ -47,6 +47,12 @@ plugins:
   - jekyll-include-cache
   - jekyll-sitemap
 
+# Replaces the theme's main.min.js (jQuery and five plugins) with the small script
+# in assets/js/site.js. The masthead menu and the contact form are the only
+# interactive parts of the site.
+footer_scripts:
+  - /assets/js/site.js
+
 # Every page shares the same hero treatment, so set it once here instead of
 # repeating a five-line `header:` block in each file's front matter.
 defaults:
@@ -57,5 +63,7 @@ defaults:
       layout: splash
       header:
         overlay_color: "#0f4c5c"
-        overlay_filter: "linear-gradient(to right, rgba(11, 45, 54, 0.94), rgba(11, 45, 54, 0.72) 60%, rgba(11, 45, 54, 0.45))"
+        # Keep identical to $hero-overlay in _sass/_custom.scss. This copy is the
+        # JPEG fallback; that one is the WebP path most browsers take.
+        overlay_filter: "linear-gradient(to right, rgba(11, 45, 54, 0.95), rgba(11, 45, 54, 0.74) 55%, rgba(11, 45, 54, 0.48))"
         overlay_image: /assets/images/gear_splash.jpg

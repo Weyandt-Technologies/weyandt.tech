@@ -15,9 +15,12 @@
 
 {% if page.noindex %}<meta name="robots" content="noindex, follow">{% endif %}
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital@1&display=swap">
+{%- comment -%}
+  Fonts are self-hosted (_sass/_fonts.scss), so no third party is contacted on a
+  page load. Preloading the one file every page uses avoids the flash of fallback
+  text that font-display: swap would otherwise allow.
+{%- endcomment -%}
+<link rel="preload" href="{{ '/assets/fonts/ibm-plex-sans-latin.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 
 {%- comment -%}
   The theme's seo.html emits a minimal Organization node with no name. This adds the

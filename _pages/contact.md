@@ -9,7 +9,7 @@ Email me at [contact@weyandt.tech](mailto:contact@weyandt.tech) or use the form.
 
 If what you need is outside what I do, I'll say so and try to point you to someone who does it.
 
-<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xqkvlaqr" method="post">
+<form id="fs-frm" name="simple-contact-form" accept-charset="utf-8" action="https://formspree.io/f/xqkvlaqr" method="post" data-thanks="/thanks/">
   <fieldset id="fs-frm-inputs">
     <label for="full-name">Your name</label>
     <input type="text" name="name" id="full-name" autocomplete="name" required>
@@ -20,9 +20,9 @@ If what you need is outside what I do, I'll say so and try to point you to someo
     <label for="tel">Phone number (optional)</label>
     <input type="tel" name="tel" id="tel" autocomplete="tel">
 
-    <label for="org-type">What kind of organization?</label>
+    <label for="org-type">What kind of organization? (optional)</label>
     <select name="organization_type" id="org-type">
-      <option value="">Prefer not to say</option>
+      <option value="">Choose one</option>
       <option>Medical practice or vendor</option>
       <option>Law, accounting, or insurance firm</option>
       <option>School or district</option>
@@ -34,6 +34,8 @@ If what you need is outside what I do, I'll say so and try to point you to someo
     <p class="form-hint">A sentence or two is plenty. Please don’t put passwords, patient or client data, or details of an active security incident in this form.</p>
 
     <input type="hidden" name="_subject" value="Contact form submission">
+    <!-- Honoured by Formspree on paid plans only. With JavaScript, site.js submits
+         with fetch and redirects to /thanks/ itself, so this is the no-JS fallback. -->
     <input type="hidden" name="_next" value="https://weyandt.tech/thanks/">
     <p class="form-gotcha" aria-hidden="true">
       <label for="company-website">Leave this field empty</label>
